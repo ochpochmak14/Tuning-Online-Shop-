@@ -14,10 +14,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="/products/">Каталог</a></li>
-        <li class="nav-item"><a class="nav-link" href="/cart/">Корзина</a></li>
-        <li class="nav-item"><a class="nav-link" href="/users/login/">Логин</a></li>
-        <li class="nav-item"><a class="nav-link" href="/users/register/">Регистрация</a></li>
+        <li class="nav-item"><a class="nav-link">Каталог</a></li>
+<li class="nav-item"><a class="nav-link" >Корзина</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Логин</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Регистрация</a></li>
+
       </ul>
     </div>
   </div>
