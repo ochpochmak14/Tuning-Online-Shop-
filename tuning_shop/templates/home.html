@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+<div class="hero text-center">
+    <div class="container py-5">
+        <h1 class="display-3 fw-bold text-shadow">Tuning Shop</h1>
+        <p class="lead fs-4 text-shadow">
+            Ваш надёжный партнёр в мире тюнинга BMW. <strong>Обвесы, выхлопы, подвеска — всё для вашего авто!</strong>
+        </p>
+        <a href="/products/" class="btn btn-primary btn-lg mt-3">Перейти в каталог</a>
+    </div>
+</div>
+
+<div class="container py-5">
+    <h2 class="text-center mb-4">Наши эксклюзивные обвесы</h2>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <img src="https://www.idtuning.ru/assets/catalog/bodykit/bmw/m3/g80/ac/bodykit.jpg" 
+                     class="card-img-top" alt="BMW M3 G80 AC Bodykit">
+                <div class="card-body">
+                    <h5 class="card-title">BMW M3 G80 AC Bodykit</h5>
+                    <p class="card-text">Элегантный аэродинамический обвес с карбоновыми элементами от AC Schnitzer.</p>
+                    <a href="#" class="btn btn-outline-primary">Подробнее</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <img src="https://www.idtuning.ru/assets/catalog/bodykit/bmw/m5/f90/superjet/bodykit.jpg" 
+                     class="card-img-top" alt="BMW M5 F90 SuperJet Bodykit">
+                <div class="card-body">
+                    <h5 class="card-title">BMW M5 F90 SuperJet</h5>
+                    <p class="card-text">Агрессивный обвес с карбоновыми вставками, идеально подходит для модернизации M5 F90.</p>
+                    <a href="#" class="btn btn-outline-primary">Подробнее</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <img src="https://focus.ua/static/storage/thumbs/1480x750/8/df/ed0adcba-f32c382511679ae54ce56b3d00a1fdf8.webp?v=0359_1" 
+                     class="card-img-top" alt="BMW M5 G90 Mansory">
+                <div class="card-body">
+                    <h5 class="card-title">BMW M5 G90 Mansory</h5>
+                    <p class="card-text">Эксклюзивный аэродинамический пакет Mansory с карбоновыми элементами и уникальным дизайном.</p>
+                    <a href="#" class="btn btn-outline-primary">Подробнее</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
