@@ -14,11 +14,25 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link">Каталог</a></li>
-<li class="nav-item"><a class="nav-link" >Корзина</a></li>
-<li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Логин</a></li>
-<li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Регистрация</a></li>
+        <li class="nav-item"><a class="nav-link" href="/products/">Каталог</a></li>
+        <li class="nav-item"><a class="nav-link" href="/cart/">Корзина</a></li>
 
+        {% if user.is_authenticated %}
+          <!-- Если пользователь вошёл -->
+          <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}">Профиль</a></li>
+          <li class="nav-item">
+            <form method="post" action="{% url 'logout' %}" style="display:inline;">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-link nav-link" style="display:inline; padding:0; border:none; background:none;">
+                Выйти
+              </button>
+            </form>
+          </li>
+        {% else %}
+          <!-- Если пользователь не вошёл -->
+          <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Логин</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Регистрация</a></li>
+        {% endif %}
       </ul>
     </div>
   </div>
