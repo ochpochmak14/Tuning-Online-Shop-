@@ -11,7 +11,7 @@ def register(request):
         form = UserRegisterForm(request.POST)
         if form.is_valid():
             form.save()
-            username = form.cleaned_data('username')
+            username = form.cleaned_data['username']
             messages.success(request, f"Аккаунт {username} успешно создан! Добро пожаловать в M-Performance Hub — переходите в каталог и выберите тюнинг для своего BMW!")
             return redirect('login')
     else:
