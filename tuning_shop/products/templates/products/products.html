@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Товары</title>
+</head>
+<body>
+  <h1>Все товары</h1>
+
+  {# Фильтры показываем только если есть данные #}
+  {% if brands or models %}
+  <form method="get" action="">
+    {% if brands %}
+      <label>Марка:
+        <select name="brand" onchange="this.form.submit()">
+          <option value="">Все</option>
+          {% for b in brands %}
+            <option value="{{ b.id }}" {% if selected_brand == b.id|stringformat:'s' %}selected{% endif %}>{{ b.name }}</option>
+          {% endfor %}
+        </select>
+      </label>
+    {% endif %}
+
+    {% if models %}
+      <label>Модель:
+        <select name="model" onchange="this.form.submit()">
+          <option value="">Все</option>
+          {% for m in models %}
+            <option value="{{ m.id }}" {% if selected_model == m.id|stringformat:'s' %}selected{% endif %}>{{ m.name }}</option>
+          {% endfor %}
+        </select>
+      </label>
+    {% endif %}
+  </form>
+  {% endif %}
+
+  <hr>
+
+  {% if products %}
+    <ul>
+      {% for p in products %}
+        <li>{{ p.name }} — {{ p.price }}₸</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>Товаров нет.</p>
+  {% endif %}
+</body>
+</html>
