@@ -31,7 +31,6 @@
 
                     <!-- Кнопки -->
                     <div class="d-flex justify-content-between">
-                        <a href="#" class="btn btn-primary">Редактировать</a>
                         <form method="post" action="{% url 'logout' %}">
                             {% csrf_token %}
                             <button type="submit" class="btn btn-danger">Выйти</button>
